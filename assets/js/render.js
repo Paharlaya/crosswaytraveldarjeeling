@@ -28,7 +28,7 @@ function renderFeaturedPackages(host) {
         '<div class="col-md-4">' +
             '<div class="package-card-modern">' +
                 '<div class="image-wrapper">' +
-                    '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '">' +
+                    '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async">' +
                     (p.featured ? '<span class="badge-top-right"><i class="fas fa-star"></i> Featured</span>' : '') +
                     '<div class="price-overlay">' +
                         '<span class="price">' + formatPrice(p.price, p.priceUnit) + '</span>' +
@@ -64,7 +64,7 @@ function renderPackagesGrid(host) {
              ' data-destination="' + esc(String(p.destination).toLowerCase()) + '">' +
             '<div class="package-card">' +
                 '<div class="image-wrapper">' +
-                    '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '">' +
+                    '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async">' +
                     (p.featured ? '<span class="badge-top-right"><i class="fas fa-star"></i> Featured</span>' : '') +
                     '<div class="price-overlay">' +
                         '<span class="price">' + formatPrice(p.price, p.priceUnit) + '</span>' +
@@ -160,7 +160,7 @@ function renderGalleryStrip(host) {
     host.innerHTML = items.map(function (image, index) {
         return '' +
         '<div class="gallery-item-modern" data-index="' + index + '" onclick="openLightbox(' + index + ')">' +
-            '<img src="' + esc(image.image_path) + '" alt="' + esc(image.title) + '">' +
+            '<img src="' + esc(image.image_path) + '" alt="' + esc(image.title) + '" loading="lazy" decoding="async">' +
             '<div class="overlay">' +
                 '<div>' +
                     '<h6>' + esc(image.title) + '</h6>' +
@@ -187,7 +187,7 @@ function renderGalleryGrid(host) {
              ' data-title="' + esc(String(image.title).toLowerCase()) + '"' +
              ' data-category="' + esc(String(image.category || '').toLowerCase()) + '"' +
              ' onclick="openLightbox(' + index + ')">' +
-            '<img src="' + esc(image.image_path) + '" alt="' + esc(image.title) + '">' +
+            '<img src="' + esc(image.image_path) + '" alt="' + esc(image.title) + '" loading="lazy" decoding="async">' +
             '<div class="overlay">' +
                 '<span class="category-badge">' + esc(image.category || 'Himalayan Beauty') + '</span>' +
                 '<h6>' + esc(image.title) + '</h6>' +
@@ -255,7 +255,7 @@ function renderPackageDetail() {
 
     host.innerHTML = '' +
     '<div class="package-detail-card">' +
-        (pkg.image ? '<img src="' + esc(pkg.image) + '" alt="' + esc(pkg.name) + '" class="detail-image">' : '') +
+        (pkg.image ? '<img src="' + esc(pkg.image) + '" alt="' + esc(pkg.name) + '" class="detail-image" decoding="async">' : '') +
         '<div class="detail-content">' +
             '<div class="row">' +
                 '<div class="col-md-8">' +
@@ -344,7 +344,7 @@ function renderRelatedPackages(pkg) {
                 '<div class="col-lg-4 col-md-6 mb-4">' +
                     '<div class="package-card">' +
                         '<div class="image-wrapper">' +
-                            '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '">' +
+                            '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async">' +
                             '<div class="price-overlay">' +
                                 '<span class="price">' + formatPrice(p.price, p.priceUnit) + '</span>' +
                             '</div>' +

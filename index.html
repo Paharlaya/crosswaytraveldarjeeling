@@ -3,7 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrossWay Travel - Home</title>
+    <title>CrossWay Darjeeling Travel | Tours, Cabs &amp; Sightseeing</title>
+    <meta name="description" content="Trusted local tour operator in Darjeeling. Sightseeing tours, cab hire, Gangtok &amp; Sikkim packages, Dooars tours and NJP / Bagdogra transfers. Call 7797970234.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/">
+
+    <!-- Open Graph (WhatsApp, Facebook link previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CrossWay Darjeeling Travel">
+    <meta property="og:title" content="CrossWay Darjeeling Travel | Tours, Cabs &amp; Sightseeing">
+    <meta property="og:description" content="Trusted local tour operator in Darjeeling. Sightseeing tours, cab hire, Gangtok &amp; Sikkim packages, Dooars tours and NJP / Bagdogra transfers. Call 7797970234.">
+    <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/">
+    <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CrossWay Darjeeling Travel | Tours, Cabs &amp; Sightseeing">
+    <meta name="twitter:description" content="Trusted local tour operator in Darjeeling. Sightseeing tours, cab hire, Gangtok &amp; Sikkim packages, Dooars tours and NJP / Bagdogra transfers. Call 7797970234.">
+    <meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/og-cover.jpg">
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#013565">
+
+    <!-- Structured data for local search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "CrossWay Darjeeling Travel",
+      "description": "Local travel agency in Darjeeling offering sightseeing tours, cab hire and custom Himalayan itineraries.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "image": "https://REPLACE-WITH-YOUR-DOMAIN/images/og-cover.jpg",
+      "logo": "https://REPLACE-WITH-YOUR-DOMAIN/images/logo.jpeg",
+      "telephone": "+91-7797970234",
+      "email": "crosswaydarjeelingtravel@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Darjeeling",
+        "addressRegion": "West Bengal",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Darjeeling" },
+        { "@type": "Place", "name": "Kalimpong" },
+        { "@type": "Place", "name": "Kurseong" },
+        { "@type": "Place", "name": "Mirik" },
+        { "@type": "Place", "name": "Sikkim" },
+        { "@type": "Place", "name": "Dooars" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": ["https://wa.me/917797970234"]
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -74,6 +137,7 @@
             color: #f9a825;
         }
 
+        .hero-carousel .carousel-item .slide-content h1,
         .hero-carousel .carousel-item .slide-content h2 {
             font-size: 4rem;
             font-weight: 900;
@@ -81,6 +145,7 @@
             text-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
 
+        .hero-carousel .carousel-item .slide-content h1 .highlight,
         .hero-carousel .carousel-item .slide-content h2 .highlight {
             color: #f9a825;
         }
@@ -817,7 +882,8 @@
 
         /* Responsive */
         @media (max-width: 991px) {
-            .hero-carousel .carousel-item .slide-content h2 {
+            .hero-carousel .carousel-item .slide-content h1,
+        .hero-carousel .carousel-item .slide-content h2 {
                 font-size: 3rem;
             }
 
@@ -855,7 +921,8 @@
         }
 
         @media (max-width: 768px) {
-            .hero-carousel .carousel-item .slide-content h2 {
+            .hero-carousel .carousel-item .slide-content h1,
+        .hero-carousel .carousel-item .slide-content h2 {
                 font-size: 2.2rem;
             }
 
@@ -903,7 +970,8 @@
         }
 
         @media (max-width: 576px) {
-            .hero-carousel .carousel-item .slide-content h2 {
+            .hero-carousel .carousel-item .slide-content h1,
+        .hero-carousel .carousel-item .slide-content h2 {
                 font-size: 1.8rem;
             }
 
@@ -990,7 +1058,7 @@
         <!-- Logo / Brand -->
         <a class="navbar-brand" href="index.html">
             <div class="logo-text">
-                <img src="images/logo.jpeg" alt="CrossWay Darjeeling Travel" style="width:100px">
+                <img src="images/logo.jpeg" alt="CrossWay Darjeeling Travel" width="100" height="100" style="width:100px;height:auto" fetchpriority="high">
             </div>
         </a>
 
@@ -1066,7 +1134,7 @@
                 <div class="slide-content">
                     <div>
                         <span class="slide-label"><i class="fas fa-mountain"></i> Destination</span>
-                        <h2>Welcome to <span class="highlight">Darjeeling</span></h2>
+                        <h1>Welcome to <span class="highlight">Darjeeling</span></h1>
                         <p>Discover the Queen of the Hills with breathtaking views of the Himalayas and lush tea gardens.</p>
                         <a href="packages.html" class="btn-slide">
                             <i class="fas fa-compass"></i> Explore Packages
@@ -1235,7 +1303,7 @@
         <i class="fas fa-chevron-right"></i>
     </div>
     <div class="lightbox-content" onclick="event.stopPropagation();">
-        <img id="lightboxImage" src="" alt="">
+        <img id="lightboxImage" src="" alt="" decoding="async">
         <div class="lightbox-caption" id="lightboxCaption">
             <span id="lightboxTitle"></span> <small id="lightboxCategory"></small>
         </div>
@@ -1366,7 +1434,11 @@
         </div>
         <hr class="bg-light">
         <div class="text-center">
-            <p class="mb-0">&copy; <span id="footerYear">2026</span> CrossWay Darjeeling Travel. All rights reserved.</p>
+            <p class="mb-1">&copy; <span id="footerYear">2026</span> CrossWay Darjeeling Travel. All rights reserved.</p>
+            <p class="mb-0 footer-credit">
+                Crafted by
+                <a href="https://cedarnestweb.vercel.app" target="_blank" rel="noopener">Cedar Nest Web</a>
+            </p>
         </div>
     </div>
 </footer>

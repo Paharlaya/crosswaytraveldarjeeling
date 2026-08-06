@@ -83,11 +83,51 @@ eight HTML files.
 
 ### Adding a custom domain
 
-1. Create a file named `CNAME` in this folder containing just your domain, e.g.
-   `crosswaydarjeeling.com` — no `http://`, no trailing slash.
-2. At your domain registrar, add four `A` records for the bare domain pointing to
-   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`,
-   and a `CNAME` record for `www` pointing to `<username>.github.io`.
-3. In **Settings → Pages**, enter the domain and tick **Enforce HTTPS** once the
-   certificate is issued (can take a few minutes).
-4. Replace `REPLACE-WITH-YOUR-DOMAIN` in `robots.txt` and `sitemap.xml` with the real domain.
+**Run this one command** — it fills the domain into all 48 placeholder spots (canonical
+tags, Open Graph URLs, the JSON-LD block, `robots.txt`, `sitemap.xml`) and writes the
+`CNAME` file GitHub Pages needs:
+
+```bash
+./set-domain.sh yourdomain.com
+```
+
+Then at your registrar, point DNS at GitHub:
+
+| Type | Name | Value |
+|---|---|---|
+| A | @ | `185.199.108.153` |
+| A | @ | `185.199.109.153` |
+| A | @ | `185.199.110.153` |
+| A | @ | `185.199.111.153` |
+| CNAME | www | `<username>.github.io` |
+
+Finally, in **Settings → Pages**, enter the domain and tick **Enforce HTTPS** once the
+certificate is issued (usually a few minutes).
+
+> Until you run `set-domain.sh`, the canonical and social-preview tags point at
+> `REPLACE-WITH-YOUR-DOMAIN`. That's harmless while you're testing on the `github.io`
+> URL, but do run it before you start promoting the site.
+
+## SEO
+
+Each page has a unique `<title>`, meta description, canonical URL, Open Graph and Twitter
+card tags, and a single `<h1>`. The homepage carries `TravelAgency` structured data
+(schema.org) with your phone, address and service areas — that's what feeds Google's local
+results.
+
+- **Icons**: `favicon.ico` plus PNGs in `assets/icons/`, generated from `images/logo.jpeg`.
+- **Social previews**: `images/og-cover.jpg` (1200×630) is what shows when a link is shared
+  on WhatsApp or Facebook. Replace it with a better photo whenever you like — keep the
+  dimensions.
+- **Sitemap**: lists all 6 pages plus one URL per package. If you add or rename a package,
+  add its `package-detail.html?id=<id>` line to `sitemap.xml` too.
+
+One known limit: WhatsApp and Facebook don't run JavaScript when they build a link
+preview, so sharing a link to a *specific* package shows the generic "Tour Package"
+preview rather than that package's own name and photo. Sharing the homepage, packages page,
+or any other page works fully. If per-package previews matter later, each package needs its
+own HTML file — say the word and it's a small change.
+
+## Credits
+
+Site by [Cedar Nest Web](https://cedarnestweb.vercel.app).

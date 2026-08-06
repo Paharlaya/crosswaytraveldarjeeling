@@ -16,38 +16,13 @@ body {
 
 /* ============================================
    NAVBAR
+   ----------------------------------------
+   The old white-navbar rules that used to live here were removed: the
+   `.navbar { background: #fff !important }` in particular overrode the
+   dark gradient on `.main-navbar`, leaving white links on a white bar.
+   All navbar styling now lives in the TOP BAR + MAIN NAVBAR section
+   further down this file.
    ============================================ */
-.navbar {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    background: #fff !important;
-    padding: 12px 0;
-}
-
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #1a1a2e !important;
-}
-
-.navbar-brand i {
-    margin-right: 8px;
-    color: #2e7d32;
-}
-
-.navbar .nav-link {
-    color: #333 !important;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.navbar .nav-link:hover {
-    color: #2e7d32 !important;
-}
-
-.navbar .nav-link.active {
-    color: #2e7d32 !important;
-    font-weight: 600;
-}
 
 /* ============================================
    FEATURES SECTION
@@ -1254,3 +1229,21 @@ body {
 /* cars.html uses .package-card as a plain card wrapper (no .image-wrapper),
    so give it sane padding in that context. */
 .package-card > .card-body { padding: 26px 22px; }
+
+/* Footer credit line */
+.footer .footer-credit {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.2px;
+}
+.footer .footer-credit a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(139, 195, 74, 0.4);
+    transition: all 0.3s ease;
+}
+.footer .footer-credit a:hover {
+    color: #8bc34a;
+    border-bottom-color: #8bc34a;
+}

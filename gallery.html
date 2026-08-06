@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrossWay Travel - Gallery</title>
+    <title>Photo Gallery | CrossWay Darjeeling Travel</title>
+    <meta name="description" content="Photos of Darjeeling and the Eastern Himalayas — tea gardens, Batasia Loop, Ghoom Monastery, Rock Garden, Lamahatta Eco Park and the Zoological Park.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/gallery.html">
+
+    <!-- Open Graph (WhatsApp, Facebook link previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CrossWay Darjeeling Travel">
+    <meta property="og:title" content="Photo Gallery | CrossWay Darjeeling Travel">
+    <meta property="og:description" content="Photos of Darjeeling and the Eastern Himalayas — tea gardens, Batasia Loop, Ghoom Monastery, Rock Garden, Lamahatta Eco Park and the Zoological Park.">
+    <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/gallery.html">
+    <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Photo Gallery | CrossWay Darjeeling Travel">
+    <meta name="twitter:description" content="Photos of Darjeeling and the Eastern Himalayas — tea gardens, Batasia Loop, Ghoom Monastery, Rock Garden, Lamahatta Eco Park and the Zoological Park.">
+    <meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/og-cover.jpg">
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#013565">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -520,7 +546,7 @@
         <!-- Logo / Brand -->
         <a class="navbar-brand" href="index.html">
             <div class="logo-text">
-                <img src="images/logo.jpeg" alt="CrossWay Darjeeling Travel" style="width:100px">
+                <img src="images/logo.jpeg" alt="CrossWay Darjeeling Travel" width="100" height="100" style="width:100px;height:auto" fetchpriority="high">
             </div>
         </a>
 
@@ -642,7 +668,7 @@
         <i class="fas fa-chevron-right"></i>
     </div>
     <div class="lightbox-content" onclick="event.stopPropagation();">
-        <img id="lightboxImage" src="" alt="">
+        <img id="lightboxImage" src="" alt="" decoding="async">
         <div class="lightbox-caption" id="lightboxCaption">
             <span id="lightboxTitle"></span> 
             <small id="lightboxCategory"></small>
@@ -688,7 +714,11 @@
         </div>
         <hr class="bg-light">
         <div class="text-center">
-            <p class="mb-0">&copy; <span id="footerYear">2026</span> CrossWay Darjeeling Travel. All rights reserved.</p>
+            <p class="mb-1">&copy; <span id="footerYear">2026</span> CrossWay Darjeeling Travel. All rights reserved.</p>
+            <p class="mb-0 footer-credit">
+                Crafted by
+                <a href="https://cedarnestweb.vercel.app" target="_blank" rel="noopener">Cedar Nest Web</a>
+            </p>
         </div>
     </div>
 </footer>
