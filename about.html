@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossWay Travel - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #013565 0%, #1f6332 100%);
+            color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .about-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: #f5b342;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        .mission-card, .vision-card, .values-card {
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        .mission-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-bottom: 4px solid #1976d2;
+        }
+        .vision-card {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-bottom: 4px solid #388e3c;
+        }
+        .values-card {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-bottom: 4px solid #f57c00;
+        }
+        .mission-card:hover, .vision-card:hover, .values-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .mission-card i, .vision-card i, .values-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .mission-card i { color: #1976d2; }
+        .vision-card i { color: #388e3c; }
+        .values-card i { color: #f57c00; }
+        .service-item {
+            padding: 15px 20px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #1f6332;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .service-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .service-item i {
+            color: #1f6332;
+            margin-right: 10px;
+        }
+        .fleet-badge {
+            padding: 10px 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            color: #1f6332;
+        }
+        .fleet-badge:hover {
+            border-color: #1f6332;
+            background: #f0f7f0;
+            transform: scale(1.05);
+        }
+        .fleet-badge i {
+            margin-right: 8px;
+            color: #1f6332;
+        }
+        .about-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #2d3436;
+        }
+        .about-content h2, .about-content h3 {
+            color: #013565;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .about-content h2 {
+            font-size: 2rem;
+        }
+        .about-content h3 {
+            font-size: 1.5rem;
+        }
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px 0;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #013565;
+        }
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stat-icon {
+            font-size: 2rem;
+            color: #1f6332;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .contact-info-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #1f6332;
+        }
+        .contact-info-box p {
+            margin-bottom: 10px;
+        }
+        .contact-info-box i {
+            width: 30px;
+            color: #1f6332;
+        }
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2rem; }
+            .about-hero p { font-size: 1rem; }
+            .stat-number { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==========================================
+     TOP BAR - Contact & Social
+     ========================================== -->
+<div class="top-bar">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 col-12">
+                <div class="top-contact">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:7797970234">7797970234</a>
+                    <span class="divider">|</span>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:crosswaydarjeelingtravel@gmail.com">crosswaydarjeelingtravel@gmail.com</a>
+                    <span class="divider">|</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Darjeeling, West Bengal</span>
+                    <span class="divider">|</span>
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="social-icons text-md-end text-center">
+                    <a href="https://wa.me/917797970234" target="_blank" rel="noopener" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MAIN NAVBAR
+     ========================================== -->
+<nav class="navbar navbar-expand-lg main-navbar" id="mainNavbar">
+    <div class="container">
+        <!-- Logo / Brand -->
+        <a class="navbar-brand" href="index.html">
+            <div class="logo-text">
+                <img src="images/logo.jpeg" alt="CrossWay Darjeeling Travel" style="width:100px">
+            </div>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="packages.html">
+                        <i class="fas fa-box"></i> Packages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cars.html">
+                        <i class="fas fa-car"></i> Our Fleet
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+
+                <!-- Book Now Button -->
+                <li class="nav-item ms-lg-2">
+                    <a href="contact.html" class="btn btn-book">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="about-hero">
+    <div class="container text-center">
+        <h1><i class="fas fa-compass me-2"></i> About CrossWay Darjeeling Travel</h1>
+        <div class="divider"></div>
+        <p>Your Trusted Partner for Unforgettable Himalayan Journeys</p>
+    </div>
+</section>
+
+<div class="container py-4">
+    <!-- Main Content -->
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+
+            
+            <!-- Introduction -->
+            <div class="about-content">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Welcome to <strong>CrossWay Darjeeling Travel</strong>, your trusted partner for unforgettable Himalayan journeys. 
+                    Based in the picturesque hill station of Darjeeling, West Bengal, we specialize in crafting exceptional travel 
+                    experiences across the Eastern Himalayas. With years of industry expertise and a deep-rooted passion for hospitality, 
+                    we are dedicated to showcasing the breathtaking beauty, rich culture, and warm traditions of this magnificent 
+                    region to travelers from around the world.
+                </p>
+            </div>
+
+            <!-- Our Story -->
+            <div class="mt-5">
+                <h2 style="color: #013565; text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-book-open me-2" style="color: #1f6332;"></i> Our Story
+                </h2>
+                <div class="about-content">
+                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                        Founded with a passion for travel and a deep love for the Himalayas, CrossWay Darjeeling Travel
+                        has been creating unforgettable journeys since 2010. Our team of local experts knows every
+                        hidden gem, every scenic viewpoint, and every cultural experience that makes this region
+                        truly special.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission, Vision, Values -->
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Our Mission</h4>
+                        <p style="color: #2d3436;">
+                            To provide authentic, safe, and memorable travel experiences that connect people with the natural wonders and cultural heritage of the Himalayas.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="vision-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>Our Vision</h4>
+                        <p style="color: #2d3436;">
+                            To become the most trusted and preferred travel partner in the region, known for quality service and genuine hospitality.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="values-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Core Values</h4>
+                        <p style="color: #2d3436;">
+                            Integrity &bull; Customer First &bull; Quality Service &bull; Innovation &bull; Sustainability
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Services -->
+            <div class="mt-5">
+                <h2 style="color: #013565; text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-concierge-bell me-2" style="color: #1f6332;"></i> Our Services
+                </h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fas fa-mountain"></i> Darjeeling Sightseeing
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fas fa-tree"></i> Mirik Sightseeing
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fas fa-city"></i> Gangtok &amp; Sikkim Tours
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fas fa-road"></i> Dooars Tour Packages
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fas fa-taxi"></i> NJP &amp; Bagdogra Pickup/Drop
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-item">
+                            <i class="fas fa-users"></i> Customized Family, Couple &amp; Group Tours
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Fleet -->
+            <div class="mt-5">
+                <h2 style="color: #013565; text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-car me-2" style="color: #1f6332;"></i> Our Fleet
+                </h2>
+                <div class="row g-3">
+                    <div class="col-4 col-md-2">
+                        <div class="fleet-badge">
+                            <i class="fas fa-car"></i> Innova Crysta
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="fleet-badge">
+                            <i class="fas fa-car"></i> Innova
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="fleet-badge">
+                            <i class="fas fa-car"></i> WagonR
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="fleet-badge">
+                            <i class="fas fa-car"></i> Dzire
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="fleet-badge">
+                            <i class="fas fa-truck"></i> Sumo Gold (9 Seater)
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <div class="fleet-badge">
+                            <i class="fas fa-truck"></i> Bolero (9 Seater)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <span class="stat-icon"><i class="fas fa-smile"></i></span>
+                                <div class="stat-number" data-count="5000">5000+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <span class="stat-icon"><i class="fas fa-map-marked-alt"></i></span>
+                                <div class="stat-number" data-count="100">100+</div>
+                                <div class="stat-label">Tour Packages</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <span class="stat-icon"><i class="fas fa-route"></i></span>
+                                <div class="stat-number" data-count="50">50+</div>
+                                <div class="stat-label">Destinations</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-item">
+                                <span class="stat-icon"><i class="fas fa-star"></i></span>
+                                <div class="stat-number" data-count="10">10+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="mt-5">
+                <h2 style="color: #013565; text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-check-circle me-2" style="color: #1f6332;"></i> Why Choose Us
+                </h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-shield-alt fa-2x me-3" style="color: #1f6332;"></i>
+                            <div>
+                                <h5>Trusted &amp; Reliable</h5>
+                                <p class="text-muted">With years of experience, we have built a reputation for trust and reliability.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-user-friends fa-2x me-3" style="color: #1f6332;"></i>
+                            <div>
+                                <h5>Personalized Service</h5>
+                                <p class="text-muted">Every journey is unique, and we tailor our packages to your preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-rupee-sign fa-2x me-3" style="color: #1f6332;"></i>
+                            <div>
+                                <h5>Best Value</h5>
+                                <p class="text-muted">Competitive prices without compromising on quality and comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-headset fa-2x me-3" style="color: #1f6332;"></i>
+                            <div>
+                                <h5>24/7 Support</h5>
+                                <p class="text-muted">We are always available to assist you before, during, and after your trip.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet Our Team -->
+            <div class="mt-5">
+                <h2 style="color: #013565; text-align: center; margin-bottom: 10px;">
+                    <i class="fas fa-users me-2" style="color: #1f6332;"></i> Meet Our Team
+                </h2>
+                <p class="text-center text-muted mb-4">
+                    We are a team of passionate travel experts dedicated to making your Himalayan journey unforgettable.
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="mission-card text-center h-100">
+                            <div class="avatar-initials mx-auto mb-3">RG</div>
+                            <h5 style="color: #013565; margin-bottom: 4px;">Rajesh Gurung</h5>
+                            <p style="color: #1f6332; font-weight: 600; font-size: 0.85rem;">Founder &amp; CEO</p>
+                            <p style="color: #2d3436; font-size: 0.92rem;">
+                                With over 15 years of experience in the travel industry, Rajesh founded CrossWay Travel
+                                with a vision to showcase the beauty of the Himalayas to the world.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="mission-card text-center h-100">
+                            <div class="avatar-initials mx-auto mb-3">PS</div>
+                            <h5 style="color: #013565; margin-bottom: 4px;">Priya Sharma</h5>
+                            <p style="color: #1f6332; font-weight: 600; font-size: 0.85rem;">Operations Manager</p>
+                            <p style="color: #2d3436; font-size: 0.92rem;">
+                                Priya ensures every journey is perfectly planned and executed, handling all logistics
+                                and customer relations with utmost care.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="mission-card text-center h-100">
+                            <div class="avatar-initials mx-auto mb-3">ST</div>
+                            <h5 style="color: #013565; margin-bottom: 4px;">Suresh Tamang</h5>
+                            <p style="color: #1f6332; font-weight: 600; font-size: 0.85rem;">Senior Tour Guide</p>
+                            <p style="color: #2d3436; font-size: 0.92rem;">
+                                A local expert with deep knowledge of Darjeeling and Sikkim, Suresh has been guiding
+                                travelers through the Himalayas for over 10 years.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="mission-card text-center h-100">
+                            <div class="avatar-initials mx-auto mb-3">AR</div>
+                            <h5 style="color: #013565; margin-bottom: 4px;">Anita Rai</h5>
+                            <p style="color: #1f6332; font-weight: 600; font-size: 0.85rem;">Customer Relations</p>
+                            <p style="color: #2d3436; font-size: 0.92rem;">
+                                Anita is dedicated to ensuring every traveler feels welcomed and supported throughout
+                                their journey with CrossWay Travel.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mt-5">
+                <h2 style="color: #013565; text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-address-card me-2" style="color: #1f6332;"></i> Get in Touch
+                </h2>
+                <div class="contact-info-box">
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Darjeeling, West Bengal</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:7797970234">7797970234</a></p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:crosswaydarjeelingtravel@gmail.com">crosswaydarjeelingtravel@gmail.com</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/917797970234" target="_blank" rel="noopener">Chat with us</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer bg-dark text-light py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><i class="fas fa-compass"></i> CrossWay Darjeeling Travel</h5>
+                <p>Your trusted travel partner for unforgettable Himalayan journeys.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Darjeeling, West Bengal</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:7797970234" class="text-light footer-contact">7797970234</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:crosswaydarjeelingtravel@gmail.com" class="text-light footer-contact">crosswaydarjeelingtravel@gmail.com</a></p>
+                <a href="https://wa.me/917797970234" target="_blank" rel="noopener" class="btn-footer-wa">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="packages.html" class="text-light">Packages</a></li>
+                    <li><a href="cars.html" class="text-light">Our Fleet</a></li>
+                    <li><a href="gallery.html" class="text-light">Gallery</a></li>
+                    <li><a href="about.html" class="text-light">About Us</a></li>
+                    <li><a href="contact.html" class="text-light">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>We Offer</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success"></i> Darjeeling Sightseeing</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Mirik Sightseeing</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Gangtok &amp; Sikkim Tours</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Dooars Tour Packages</li>
+                    <li><i class="fas fa-check-circle text-success"></i> NJP &amp; Bagdogra Pickup/Drop</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; <span id="footerYear">2026</span> CrossWay Darjeeling Travel. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/917797970234" target="_blank" rel="noopener" class="wa-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

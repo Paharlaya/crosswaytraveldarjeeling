@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossWay Travel - Packages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* ============================================
+           PACKAGES PAGE STYLES
+           ============================================ */
+        
+        /* Hero Section */
+        .packages-hero {
+            background: linear-gradient(135deg, #013565 0%, #1f6332 100%);
+            color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .packages-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .packages-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .packages-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .packages-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: #f5b342;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Package Cards */
+        .package-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            height: 100%;
+            border: none;
+        }
+
+        .package-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.12);
+        }
+
+        .package-card .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+        }
+
+        .package-card .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .package-card:hover .image-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .package-card .image-wrapper .badge-top-right {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #f9a825, #fbc02d);
+            color: #1a1a2e;
+            padding: 5px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(249, 168, 37, 0.4);
+            z-index: 2;
+        }
+
+        .package-card .image-wrapper .badge-top-right i {
+            margin-right: 5px;
+        }
+
+        .package-card .image-wrapper .price-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: #fff;
+        }
+
+        .package-card .image-wrapper .price-overlay .price {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .package-card .image-wrapper .price-overlay .price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .package-card .body-content {
+            padding: 25px;
+        }
+
+        .package-card .body-content h5 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+
+        .package-card .body-content .meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .package-card .body-content .meta i {
+            color: #1f6332;
+            margin-right: 5px;
+        }
+
+        .package-card .body-content .meta .badge-duration {
+            background: #e8f5e9;
+            color: #1f6332;
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .package-card .body-content .meta .badge-featured {
+            background: #fff3e0;
+            color: #f57c00;
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .package-card .body-content p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .package-card .body-content .destination {
+            color: #1a1a2e;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .package-card .body-content .destination i {
+            color: #dc3545;
+            margin-right: 5px;
+        }
+
+        .package-card .body-content .inclusions {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 3px solid #1f6332;
+        }
+
+        .package-card .body-content .inclusions strong {
+            color: #1a1a2e;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .package-card .body-content .inclusions p {
+            margin-bottom: 0;
+            font-size: 0.85rem;
+        }
+
+        .package-card .btn-book {
+            background: linear-gradient(135deg, #1f6332, #2e7d32);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            border: none;
+        }
+
+        .package-card .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(31, 99, 50, 0.4);
+            background: linear-gradient(135deg, #2e7d32, #388e3c);
+            color: #fff;
+        }
+
+        .package-card .btn-detail {
+            background: transparent;
+            color: #013565;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 2px solid #013565;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .package-card .btn-detail:hover {
+            background: #013565;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(1, 53, 101, 0.2);
+        }
+
+        .package-card .btn-group-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px 0;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #013565;
+        }
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stat-icon {
+            font-size: 2rem;
+            color: #1f6332;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Filter/Search Section */
+        .filter-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .filter-section .form-control,
+        .filter-section .form-select {
+            border-radius: 50px;
+            padding: 10px 20px;
+            border-color: #e0e0e0;
+        }
+
+        .filter-section .form-control:focus,
+        .filter-section .form-select:focus {
+            border-color: #1f6332;
+            box-shadow: 0 0 0 0.2rem rgba(31, 99, 50, 0.1);
+        }
+
+        .filter-section .btn-filter {
+            background: linear-gradient(135deg, #1f6332, #2e7d32);
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .filter-section .btn-filter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(31, 99, 50, 0.3);
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .packages-hero h1 {
+                font-size: 2rem;
+            }
+            .packages-hero p {
+                font-size: 1rem;
+            }
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            .package-card .image-wrapper {
+                height: 180px;
+            }
+            .filter-section .btn-filter {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .package-card .image-wrapper {
+                height: 160px;
+            }
+            .package-card .body-content {
+                padding: 18px;
+            }
+            .package-card .body-content h5 {
+                font-size: 1rem;
+            }
+            .package-card .body-content .meta {
+                font-size: 0.75rem;
+                gap: 8px;
+            }
+            .package-card .image-wrapper .price-overlay .price {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==========================================
+     TOP BAR - Contact & Social
+     ========================================== -->
+<div class="top-bar">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 col-12">
+                <div class="top-contact">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:7797970234">7797970234</a>
+                    <span class="divider">|</span>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:crosswaydarjeelingtravel@gmail.com">crosswaydarjeelingtravel@gmail.com</a>
+                    <span class="divider">|</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Darjeeling, West Bengal</span>
+                    <span class="divider">|</span>
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="social-icons text-md-end text-center">
+                    <a href="https://wa.me/917797970234" target="_blank" rel="noopener" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     MAIN NAVBAR
+     ========================================== -->
+<nav class="navbar navbar-expand-lg main-navbar" id="mainNavbar">
+    <div class="container">
+        <!-- Logo / Brand -->
+        <a class="navbar-brand" href="index.html">
+            <div class="logo-text">
+                <img src="images/logo.jpeg" alt="CrossWay Darjeeling Travel" style="width:100px">
+            </div>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="packages.html">
+                        <i class="fas fa-box"></i> Packages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cars.html">
+                        <i class="fas fa-car"></i> Our Fleet
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">
+                        <i class="fas fa-images"></i> Gallery
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </li>
+
+                <!-- Book Now Button -->
+                <li class="nav-item ms-lg-2">
+                    <a href="contact.html" class="btn btn-book">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="packages-hero">
+    <div class="container text-center">
+        <h1><i class="fas fa-box me-2"></i> Our Travel Packages</h1>
+        <div class="divider"></div>
+        <p>Discover our curated travel packages designed for unforgettable Himalayan experiences</p>
+    </div>
+</section>
+
+<div class="container py-4">
+    <!-- Filter/Search Section -->
+    <div class="filter-section">
+        <div class="row g-3 align-items-end">
+            <div class="col-md-5">
+                <label class="form-label fw-bold"><i class="fas fa-search me-1"></i> Search Packages</label>
+                <input type="text" class="form-control" id="searchPackages" placeholder="Search by name or destination..." onkeyup="filterPackages()">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label fw-bold"><i class="fas fa-filter me-1"></i> Filter by Destination</label>
+                <select class="form-select" id="filterDestination" onchange="filterPackages()">
+                    <option value="all">All Destinations</option>
+                    <option value="Darjeeling">Darjeeling</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Gangtok">Gangtok</option>
+                    <option value="Mirik">Mirik</option>
+                    <option value="Dooars">Dooars</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn-filter w-100" onclick="resetFilters()">
+                    <i class="fas fa-undo me-1"></i> Reset Filters
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Packages Grid -->
+    <div class="row" id="packagesGrid"></div>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="text-center py-5" style="display: none;">
+        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+        <h4>No packages found</h4>
+        <p class="text-muted">Try adjusting your search or filter criteria</p>
+        <button class="btn btn-primary" onclick="resetFilters()" style="border-radius: 50px; padding: 10px 30px; background: linear-gradient(135deg, #1f6332, #2e7d32); border: none;">
+            <i class="fas fa-undo me-1"></i> Reset Filters
+        </button>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+        <h3 style="color: #013565; font-weight: 700;">Need a Custom Package?</h3>
+        <p class="text-muted">Contact us and we'll create a tailor-made itinerary just for you</p>
+        <a href="https://wa.me/917797970234?text=Hi%21%20I%27d%20like%20a%20custom%20package." target="_blank" rel="noopener" class="btn btn-primary" style="border-radius: 50px; padding: 14px 45px; background: linear-gradient(135deg, #013565, #1f6332); border: none; box-shadow: 0 8px 30px rgba(1, 53, 101, 0.3); transition: all 0.3s ease;">
+            <i class="fab fa-whatsapp me-2"></i> Chat With Us Now
+        </a>
+    </div>
+</div>
+
+<footer class="footer bg-dark text-light py-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><i class="fas fa-compass"></i> CrossWay Darjeeling Travel</h5>
+                <p>Your trusted travel partner for unforgettable Himalayan journeys.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Darjeeling, West Bengal</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:7797970234" class="text-light footer-contact">7797970234</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:crosswaydarjeelingtravel@gmail.com" class="text-light footer-contact">crosswaydarjeelingtravel@gmail.com</a></p>
+                <a href="https://wa.me/917797970234" target="_blank" rel="noopener" class="btn-footer-wa">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="packages.html" class="text-light">Packages</a></li>
+                    <li><a href="cars.html" class="text-light">Our Fleet</a></li>
+                    <li><a href="gallery.html" class="text-light">Gallery</a></li>
+                    <li><a href="about.html" class="text-light">About Us</a></li>
+                    <li><a href="contact.html" class="text-light">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>We Offer</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success"></i> Darjeeling Sightseeing</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Mirik Sightseeing</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Gangtok &amp; Sikkim Tours</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Dooars Tour Packages</li>
+                    <li><i class="fas fa-check-circle text-success"></i> NJP &amp; Bagdogra Pickup/Drop</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="text-center">
+            <p class="mb-0">&copy; <span id="footerYear">2026</span> CrossWay Darjeeling Travel. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/917797970234" target="_blank" rel="noopener" class="wa-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="data/packages.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/render.js"></script>
+</body>
+</html>
