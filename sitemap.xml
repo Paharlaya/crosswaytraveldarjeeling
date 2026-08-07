@@ -2,79 +2,79 @@
 <!-- Run ./set-domain.sh yourdomain.com to fill in the real domain. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/</loc>
+    <loc>https://crosswaydarjeelingtravel.com/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/packages.html</loc>
+    <loc>https://crosswaydarjeelingtravel.com/packages.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/contact.html</loc>
+    <loc>https://crosswaydarjeelingtravel.com/contact.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/cars.html</loc>
+    <loc>https://crosswaydarjeelingtravel.com/cars.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/gallery.html</loc>
+    <loc>https://crosswaydarjeelingtravel.com/gallery.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/about.html</loc>
+    <loc>https://crosswaydarjeelingtravel.com/about.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=darjeeling-sightseeing</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=darjeeling-sightseeing</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=mirik-sightseeing</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=mirik-sightseeing</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=lamahatta-tinchuley</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=lamahatta-tinchuley</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=kalimpong-sightseeing</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=kalimpong-sightseeing</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=gangtok-sikkim</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=gangtok-sikkim</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=dooars-tour</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=dooars-tour</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-YOUR-DOMAIN/package-detail.html?id=njp-bagdogra-transfer</loc>
+    <loc>https://crosswaydarjeelingtravel.com/package-detail.html?id=njp-bagdogra-transfer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
